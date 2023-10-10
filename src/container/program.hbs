@@ -1,0 +1,100 @@
+<div>
+    {{#with program}}
+    <div>
+        {{#with excursion}}
+        <main>
+            <section>
+                {{> title data='Excursion' big=true}}
+                <p><b>Where:</b> {{name}}, {{location.city}}, {{location.country}}</address>
+                <p><b>When:</b> {{date}}</p>
+            </section>
+
+            <hr>
+
+            <section>
+                <div>
+                    {{> title data='Program' big=true }}
+                    <ul>
+                        {{#each program}}
+                        <div>
+                            <div>
+                                <div>
+                                    <li>
+                                        <h3>{{name}} ({{type}})</h3>
+                                        <p>Duration: {{duration}} hours</p>
+                                        {{#with details}}
+
+                                        <div>
+                                            {{#with venue}}
+                                            <p>Venue: {{name}}</p>
+                                            {{> location}}
+                                            {{/with}}
+                                        </div>
+                                        <div>
+                                            {{#with performers}}
+                                            <h4>Perfomers:</h4>
+                                            {{/with}}
+                                            {{#each performers}}
+                                            <p>{{name}} - <i>{{type}}</i></p>
+                                            {{/each}}
+                                        </div>
+                                        <div>
+                                            {{#with museum}}
+                                            <p>Museum: {{name}}</p>
+                                            {{> location}}
+                                        </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <b>Exhibits:</b>
+                                    <br>
+
+                                    <div>
+                                        <ul>
+                                            {{#each exhibits}}
+                                            <li>
+                                                <p>Name: {{name}}</p>
+                                                Artist: {{#if artist}}
+                                                {{artist}}
+                                                {{else}}
+                                                (uknown)
+                                                {{/if}}
+                                                <br>
+                                                <br>
+                                                <q>{{description}}</q>
+                                                <br>
+                                                <br>
+                                                {{#if audio_guide}}
+                                                <button>Audio guide</button>
+                                                {{/if}}
+                                            </li>
+                                            {{/each}}
+                                        </ul>
+                                        {{/with}}
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <b>Information about guide:</b>
+                                        {{#with guide}}
+                                        <p>Name: {{name}}</p>
+                                        <p>Language: {{language}}</p>
+                                        <p>Rate: <b>{{rating}}</b></p>
+                                        {{/with}}
+                                    </div>
+                                </div>
+                                {{/with}}
+                                </li>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </ul>
+                </div>
+            </section>
+            <hr>
+            <br>
+
+        </main>
+        {{/with}}
+    </div>
+    {{/with}}
+</div>
