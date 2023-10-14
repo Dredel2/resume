@@ -1,0 +1,140 @@
+<div>
+    <main>
+        <section>
+            <h1>{{name}}</h1>
+            <br>
+            <hr>
+            <p>{{description}}</p>
+
+            {{#with history}}
+            <p>Founder: {{founder}} ({{year}})</p>
+            {{/with}}
+            <hr>
+        </section>
+        <section>
+            <div>
+                <span class="badge text-bg-primary">Types:</span>
+                <br>
+                <br>
+                <div>
+                    {{#each types}}
+                    <ul class="list-group">
+                        <li class="list-group-item">{{this}}</li>
+                    </ul>
+                    {{/each}}
+                </div>
+            </div>
+            <br>
+            <div>
+                <span class="badge text-bg-primary">Syntax:</span>
+                <br>
+                <br>
+                <div>
+                    {{#with syntax}}
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div>
+                                <span class="badge text-bg-secondary">Varibales:</span>
+                                {{#each variables}}
+                                <ul>
+                                    <li>
+                                        {{this}}
+                                    </li>
+                                </ul>
+                                {{/each}}
+                            </div>
+                            <div>
+                                <span class="badge text-bg-secondary">Functions:</span>
+                                {{#each functions}}
+                                <ul>
+                                    <li>
+                                        {{this}}
+                                    </li>
+                                </ul>
+                                {{/each}}
+                            </div>
+                            <div>
+                                <span class="badge text-bg-secondary">Conditionals:</span>
+                                {{#each conditionals}}
+                                <ul>
+                                    <li>
+                                        {{this}}
+                                    </li>
+                                </ul>
+                                {{/each}}
+                            </div>
+                            <div>
+                                <span class="badge text-bg-secondary">Loops:</span>
+                                {{#each loops}}
+                                <ul>
+                                    <li>
+                                        {{this}}
+                                    </li>
+                                </ul>
+                                {{/each}}
+                            </div>
+                            <div>
+                                <span class="badge text-bg-secondary">Classes:</span>
+                                {{#each classes}}
+                                <ul>
+                                    <li>
+                                        {{this}}
+                                    </li>
+                                </ul>
+                                {{/each}}
+                            </div>
+                        </li>
+                    </ul>
+                    {{/with}}
+                </div>
+            </div>
+            <br>
+            <div>
+                <span class="badge text-bg-primary">Features:</span>
+                <br>
+                <br>
+                <div>
+                    {{#each features}}
+                    <ul class="list-group">
+                        <li class="list-group-item">{{this}}</li>
+                    </ul>
+                    {{/each}}
+                </div>
+            </div>
+            <br>
+            <div>
+                <span class="badge text-bg-primary">Libraries:</span>
+                <br>
+                <br>
+                <div>
+                    {{#each libraries}}
+                    <ul class="list-group">
+                        <li class="list-group-item">{{this}}</li>
+                    </ul>
+                    {{/each}}
+                </div>
+            </div>
+            <br>
+            <div>
+                <span class="badge text-bg-primary">Tools:</span>
+                <br>
+                <br>
+                <div>
+                    {{#each tools}}
+                    <ul class="list-group">
+                        <li class="list-group-item">{{this}}</li>
+                    </ul>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+        <br>
+        <hr>
+        <section>
+            <h2>Community:</h2>
+            {{#each community}}
+            <p>{{name}} ({{type}})</p>
+            {{/each}}
+        </section>
+    </main>
+</div>
