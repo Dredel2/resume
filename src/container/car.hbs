@@ -1,0 +1,403 @@
+<div>
+    <section>
+        <h1 class="display-1">{{make}} {{model}} {{year}}</h1>
+        <p><b>Color:</b> <span class="badge text-bg-secondary">Silver</span></p>
+    </section>
+    <hr>
+
+    {{#with features}}
+    <h2 class="display-2">Features</h2>
+    <section>
+        {{#with interior}}
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                Interior
+            </button>
+        </p>
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                    <h3 class="display-3">Interior</h3>
+                    <div>
+                        {{#with seats}}
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Seats:
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>
+                                        Material: <b>{{material}}</b>
+                                    </li>
+                                    <li>
+                                        Color: <span class="badge text-bg-dark">{{color}}</span>
+                                    </li>
+                                    {{#if heated}}
+                                    <li>Heated</li>
+                                    {{else}}
+                                    <li>Not heated</li>
+                                    {{/if}}
+                                    {{#if ventilated}}
+                                    <li>Ventilanted</li>
+                                    {{else}}
+                                    <li>Not ventilated</li>
+                                    {{/if}}
+                                </ul>
+                            </div>
+                        </div>
+                        {{/with}}
+                    </div>
+                    <br>
+                    <div>
+                        {{#with dashboard}}
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Dashboard:
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>
+                                        Material: <b>{{material}}</b>
+                                    </li>
+                                    <li>
+                                        Color: <span class="badge text-bg-dark">{{color}}</span>
+                                    </li>
+                                    {{#with display}}
+                                    <li>Type: <b>{{type}}</b></li>
+                                    <li>Size: <b>{{size}}</b></li>
+                                    <li>Resolution: <b>{{resolution}}</b></li>
+                                    {{#if touchscreen}}
+                                    <li>Touchscreen</li>
+                                    {{else}}
+                                    <li>Without touchscreen</li>
+                                    {{/if}}
+                                    {{/with}}
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        {{#with audio}}
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Audio:
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>System: <b>{{system}}</b></li>
+                                    <li>Speakers: <b>{{speakers}}</b></li>
+                                    {{#if subwoofer}}
+                                    <li>Subwoofer</li>
+                                    {{/if}}
+                                    {{#if bluetooth}}
+                                    <li>Bluetooth</li>
+                                    {{/if}}
+                                    {{#if USB}}
+                                    <li>USB</li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <section>
+        {{#with exterior}}
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                Exterior
+            </button>
+        </p>
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                    <h3 class="display-3">Exterior</h3>
+                    <div>
+                        {{#with wheels}}
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Wheels:
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>
+                                        Size: <b>{{size}}</b>
+                                    </li>
+                                    <li>Type: <b>{{type}}</b></li>
+                                    <li>
+                                        Color: <span class="badge text-bg-secondary">{{color}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        {{/with}}
+                    </div>
+                    <br>
+                    <div>
+                        {{#with headlights}}
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Headlights:
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>
+                                        Type: <b>{{type}}</b>
+                                    </li>
+                                    <li>
+                                        Brightness: <b>{{brightness}}</b>
+                                    </li>
+                                    {{#if automatic}}
+                                    <li>Automatic</li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        {{#with sunroof}}
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Sunroof:
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>Type: <b>{{type}}</b></li>
+                                    <li>Size: <b>{{size}}</b></li>
+                                    {{#if automatic}}
+                                    <li>Automatic</li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <section>
+        {{#with safety}}
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                Safety
+            </button>
+        </p>
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                    <h3 class="display-3">Safety</h3>
+                    <div>
+                        {{#with airbags}}
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Airbags:
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>
+                                        Front: <b>{{front}}</b>
+                                    </li>
+                                    <li>Side: <b>{{side}}</b></li>
+                                    <li>Knee: <b>{{knee}}</b></li>
+                                    <li>Rear: <b>{{rear}}</b></li>
+                                </ul>
+                            </div>
+                        </div>
+                        {{/with}}
+                    </div>
+                    <br>
+                    <div>
+                        {{#with assistance}}
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Assistance:
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    {{#if blind_spot_monitoring}}
+                                    <li>Blind spot monitoring</li>
+                                    {{/if}}
+                                    {{#if rear_cross_traffic_alert}}
+                                    <li>Rear cross traffic alert</li>
+                                    {{/if}}
+                                    {{#if lane_departure_warning}}
+                                    <li>Lane deprture warning</li>
+                                    {{/if}}
+                                    {{#if adaptive_cruise_control}}
+                                    <li>Adaptive cruise control</li>
+                                    {{/if}}
+                                    {{#if collision_warning}}
+                                    <li>Collision warning</li>
+                                    {{/if}}
+                                </ul>
+                            </div>
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    {{/with}}
+    <section>
+        {{#with engine}}
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                Engine and transmission
+            </button>
+        </p>
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+
+                    <p class="d-inline-flex gap-1">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Engine and transmission:
+                        </button>
+                    </p>
+                    <div>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <span class="badge text-bg-info">Engine</span>
+                                    <li>
+                                        Type: <b>{{type}}</b>
+                                    </li>
+                                    <li>
+                                        Displacement: {{displacement}}
+                                    </li>
+                                    <li>
+                                        Horsepower: {{horsepower}}
+                                    </li>
+                                    <li>
+                                        Torque: {{torque}}
+                                    </li>
+                                </ul>
+                                <ul>
+                                    {{#with transmission}}
+                                    <span class="badge text-bg-info">Transmission</span>
+                                    <li>
+                                        Type: {{type}}
+                                    </li>
+                                    <li>
+                                        Gears: {{gears}}
+                                    </li>
+                                    {{/with}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <section>
+        {{#with fuel_economy}}
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                Fuel economy:
+            </button>
+        </p>
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                    <p class="d-inline-flex gap-1">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Fuel economy:
+                        </button>
+                    </p>
+                    <div>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <span class="badge text-bg-info">Fuel economy</span>
+                                    <li>
+                                        City: <b>{{city}}</b>
+                                    </li>
+                                    <li>
+                                        Highway: {{highway}}
+                                    </li>
+                                    <li>
+                                        Combined: {{combined}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <hr>
+    <section>
+        {{#with price}}
+        <h3>Price</h3>
+        <div>
+            <ul>
+                <li>Base: {{base}}</li>
+                <li>Destination: {{destination}}</li>
+                <br>
+                <p>Options:</p>
+                {{#with options}}
+                <ul>
+                    <li>Navigation: {{navigation}}</li>
+                    <li>Moonroof: {{moonroof}}</li>
+                    <li>Premium_paint: {{premium_paint}}</li>
+                </ul>
+                {{/with}}
+            </ul>
+            <hr>
+            <strong>Total price: {{total}}</strong>
+        </div>
+        {{/with}}
+    </section>
+
+
+
+</div>
