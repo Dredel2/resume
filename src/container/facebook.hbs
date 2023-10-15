@@ -1,0 +1,65 @@
+<div>
+    <section>
+
+        <div>
+            {{#each users}}
+            <span class="badge text-bg-primary">Users</span>
+            {{> facebook_user}}
+            <div>
+                {{#each friends}}
+
+                <span class="badge text-bg-success">Friends</span>
+                {{> facebook_user}}
+                <div>
+                    <div>
+                        {{#each mutual_friends}}
+                        <span class="badge text-bg-info">Mutual friends</span>
+                        {{> facebook_user}}
+
+                        {{#each mutual_friends}}
+                        <span class="badge text-bg-danger">Mutual friends</span>
+                        {{> facebook_user}}
+                        {{/each}}
+                    </div>
+                    {{/each}}
+                    <div>
+                        {{#each groups}}
+                        <span class="badge text-bg-secondary">Group</span>
+                        {{> facebook_group}}
+                        <div>
+                            {{#each members}}
+                            {{> facebook_user}}
+                            {{/each}}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div>
+
+                {{#each groups}}
+                <span class="badge text-bg-secondary">Group</span>
+                {{> facebook_group}}
+                <div>
+                    {{#each members}}
+                    {{> facebook_user}}
+                    {{/each}}
+                </div>
+                {{/each}}
+            </div>
+            {{!-- <div>
+                {{#each groups}}
+                {{> facebook_group}}
+                <div>
+                    {{#each members}}
+                    {{> facebook_user}}
+                    {{/each}}
+                </div>
+                {{/each}}
+            </div> --}}
+
+            {{/each}}
+        </div>
+    </section>
+</div>
